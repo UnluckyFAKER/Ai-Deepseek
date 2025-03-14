@@ -1,0 +1,51 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>AI Prompt Service</title>-->
+<!--    <script>-->
+<!--        function getPrompt() {-->
+<!--            let question = document.getElementById("question").value;-->
+<!--            fetch(`/promt?questions=` + encodeURIComponent(question))-->
+<!--                .then(response => response.text())-->
+<!--                .then(data => {-->
+<!--                    document.getElementById("response").innerText = data;-->
+<!--                })-->
+<!--                .catch(error => console.error("Error:", error));-->
+<!--        }-->
+
+<!--        function getPromptWithStream() {-->
+<!--            let question = document.getElementById("question").value;-->
+<!--            let responseDiv = document.getElementById("response");-->
+<!--            responseDiv.innerText = "";-->
+
+<!--            fetch(`/promt/stream?questions=` + encodeURIComponent(question))-->
+<!--                .then(response => {-->
+<!--                    const reader = response.body.getReader();-->
+<!--                    const decoder = new TextDecoder();-->
+
+<!--                    function read() {-->
+<!--                        reader.read().then(({ done, value }) => {-->
+<!--                            if (done) return;-->
+<!--                            responseDiv.innerText += decoder.decode(value);-->
+<!--                            read();-->
+<!--                        });-->
+<!--                    }-->
+<!--                    read();-->
+<!--                })-->
+<!--                .catch(error => console.error("Error:", error));-->
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>AI Prompt Service</h1>-->
+
+<!--<label for="question">Enter Your Question:</label>-->
+<!--<input type="text" id="question" placeholder="Ask something..." />-->
+
+<!--<button onclick="getPrompt()">Submit</button>-->
+<!--<button onclick="getPromptWithStream()">Submit with Streaming</button>-->
+
+<!--<h2>Response:</h2>-->
+<!--<p id="response"></p>-->
+<!--</body>-->
+<!--</html>-->
